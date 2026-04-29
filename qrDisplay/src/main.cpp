@@ -78,6 +78,13 @@ void process_payment(String jsonBody) {
         return;
     }
 
+    const char* type = doc["type"];
+    if (type != nullptr && String(type) == "cancel") {
+        Serial.println("NHAN LENH HUY - QUAY VE MAIN UI");
+        ui_show_main_screen(); // Gọi hàm của ui.cpp để về màn hình chính
+        return; 
+    }
+
     String amountStr = doc["amount"].as<String>();
     const char* addInfo = doc["addInfo"];
     const char* accountNo = doc["accountNo"];

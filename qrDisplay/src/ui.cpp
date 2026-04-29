@@ -77,16 +77,16 @@ void ui_build_header(lv_obj_t * parent) {
     // 2. Label Ngày Tháng (Đưa ra CHÍNH GIỮA)
     header_wifi_name = lv_label_create(header); // Giữ tên biến cũ để đỡ sửa nhiều file
     lv_obj_set_style_text_color(header_wifi_name, COLOR_TEXT, 0);
-    lv_obj_set_style_text_font(header_wifi_name, &lv_font_montserrat_12, 0); // Font nhỏ hơn cho tinh tế
+    lv_obj_set_style_text_font(header_wifi_name, &lv_font_montserrat_14, 0); 
     lv_label_set_text(header_wifi_name, "---, 00/00"); 
-    lv_obj_align(header_wifi_name, LV_ALIGN_CENTER, 0, 0); // <--- Căn giữa Header
+    lv_obj_align(header_wifi_name, LV_ALIGN_CENTER, -15, 0); // <--- Căn giữa Header
 
     // 3. Đồng hồ (Giữ nguyên bên phải)
     header_clock = lv_label_create(header);
     lv_obj_set_style_text_color(header_clock, COLOR_TEXT, 0);
     lv_obj_set_style_text_font(header_clock, &lv_font_montserrat_14, 0);
     lv_label_set_text(header_clock, "00:00");
-    lv_obj_align(header_clock, LV_ALIGN_RIGHT_MID, -10, 0);
+    lv_obj_align(header_clock, LV_ALIGN_RIGHT_MID, 0, 0);
 }
 
 void ui_init() {
@@ -135,10 +135,10 @@ void ui_show_connecting_screen(const char * ssid) {
     lv_obj_clean(scr_connecting);
     ui_build_header(scr_connecting);
 
-    // // Thay thế Spinner bằng GIF từ thẻ SD
-    // lv_obj_t * img_gif = lv_gif_create(scr_connecting);
-    // lv_gif_set_src(img_gif, "L:/wifi.gif"); 
-    // lv_obj_align(img_gif, LV_ALIGN_CENTER, 0, -20);
+    // Thay thế Spinner bằng GIF từ thẻ SD
+    lv_obj_t * img_gif = lv_gif_create(scr_connecting);
+    lv_gif_set_src(img_gif, "L:/wifi.gif"); 
+    lv_obj_align(img_gif, LV_ALIGN_CENTER, 0, -20);
 
     lv_obj_t * lbl = lv_label_create(scr_connecting);
     lv_obj_set_style_text_color(lbl, COLOR_TEXT, 0);
