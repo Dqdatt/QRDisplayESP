@@ -13,8 +13,8 @@
 
 // --- BIẾN ĐÃ CÓ TRONG wifi_portal.h ---
 // Khai báo thực tế (Definition) để linker tìm thấy
-String target_ssid = "HomeStay";
-String target_pass = "0915755091";
+String target_ssid = "TICOS-COFFEE-TRET";
+String target_pass = "ticoscoffee247";
 
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 7 * 3600;   
